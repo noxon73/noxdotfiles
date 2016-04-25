@@ -1,0 +1,24 @@
+[submodule "/data/home/egrehm/.vim/bundle/vim-virtualenv"]
+	path = /data/home/egrehm/.vim/bundle/vim-virtualenv
+	url = https://github.com/jmcantrell/vim-virtualenv.git
+[submodule "/data/home/egrehm/.vim/bundle/auto-pairs"]
+	path = /data/home/egrehm/.vim/bundle/auto-pairs
+	url = git://github.com/jiangmiao/auto-pairs.git
+[submodule "/data/home/egrehm/.vim/bundle/python-syntax"]
+	path = /data/home/egrehm/.vim/bundle/python-syntax
+	url = https://github.com/hdima/python-syntax.git
+[submodule "/data/home/egrehm/.vim/bundle/tagbar"]
+	path = /data/home/egrehm/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "/data/home/egrehm/.vim/bundle/syntastic"]
+	path = /data/home/egrehm/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "/data/home/egrehm/.vim/colors/kalisi"]
+	path = /data/home/egrehm/.vim/colors/kalisi
+	url = https://github.com/freeo/vim-kalisi.git
+[submodule "/data/home/egrehm/.vim/bundle/nerdtree"]
+	path = /data/home/egrehm/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "github/noxdotfiles"]
+	path = github/noxdotfiles
+	url = https://github.com/noxon73/noxdotfiles.git
