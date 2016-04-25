@@ -1,4 +1,11 @@
+"source ~/.vim/.vimrc_modules
+
 " http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide
+" modules to try:
+" * pylint (maintained)
+" * pythoncomplete
+" * flac8
+"
 
 
 "pathogen
@@ -46,6 +53,7 @@ let python_highlight_all = 1
 "tagbar
 nmap <F8> :TagbarToggle<CR>
 "syntastic
+"install flake8 pylint 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -63,6 +71,54 @@ map <leader>t :NERDTreeToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " end modules
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"source ~/.vim/.vimrc_mapping
+
+
+"https://danielmiessler.com/study/vim/
+inoremap jk <ESC>
+nnoremap <leader>n :set nonumber!<CR>
+nnoremap <leader>se :set norelnumber!<CR>
+nnoremap <leader>pa :set paste!<CR>
+nnoremap <leader>npa :set nopaste!<CR>
+"http://stackoverflow.com/questions/1497958/how-to-use-vim-registers paste last yank(not delete)
+map <leader>0 "0p<CR> 
+
+"https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+" Move to the next buffer
+nnoremap <leader>] :bnext<CR>
+" " Move to the previous buffer
+nnoremap <leader>[ :bprevious<CR>
+"close buffer on quit
+nnoremap <leader>q :bd<CR>
+"diff before write
+nnoremap <leader>d :w !diff -u % -<CR>
+" show registerr
+noremap <leader>r :reg<CR>
+nnoremap <leader>bl :colo seoul256-light<CR>
+nnoremap <leader>bd :colo xoria256<CR>
+" standard
+"nnoremap <leader>bl :set bg=light<CR>
+"nnoremap <leader>bd :set bg=dark<CR>
+
+" http://vim.wikia.com/wiki/GNU_Screen_integration
+map ^[[1~ <Home>
+map ^[[4~ <End>
+imap ^[[1~ <Home>
+imap ^[[4~ <End>
+
+"" Show matching brackets when text indicator is over them
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+
+
+
+
 set foldmethod=indent
 set foldlevel=99
 "set textwidth=79
@@ -75,27 +131,6 @@ set background=dark
 set nopaste  " paste breaks tab competion 
 "set paste
 set incsearch
-"https://danielmiessler.com/study/vim/
-inoremap jk <ESC>
-nnoremap <leader>n :set nonumber!<CR>
-nnoremap <leader>pa :set paste!<CR>
-"http://stackoverflow.com/questions/1497958/how-to-use-vim-registers paste last yank(not delete)
-map <leader>0 "0p<CR> 
-
-"https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
-" Move to the next buffer
-" nmap <leader>l :bnext<CR>
-"
-" " Move to the previous buffer
-" nmap <leader>h :bprevious<CR>
-nnoremap <leader>] :bnext<CR>
-nnoremap <leader>[ :bprevious<CR>
-"close buffer on quit
-nnoremap <leader>q :bd<CR>
-"diff before write
-nnoremap <leader>d :w !diff % -<CR>
-" show registerr
-noremap <leader>r :reg>
 
 syntax on 
 set ruler
@@ -112,28 +147,6 @@ set cursorline
 set cursorcolumn
 set scrolloff=5
 
-"colors & co
-set t_Co=256 "before colorscheme
-"colorscheme herald
-"colorscheme xoria256
-"colorscheme kalisi "light and dark favorit if more configurable (darker bg) 
-"
-"colo seoul256-light
-let g:seoul256_background = 233 " darker
-let g:seoul256_light_background = 253
-colo seoul256
-nnoremap <leader>bl :colo seoul256-light<CR>
-nnoremap <leader>bd :colo seoul256<CR>
-" standard
-"nnoremap <leader>bl :set bg=light<CR>
-"nnoremap <leader>bd :set bg=dark<CR>
-
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-"" Show matching brackets when text indicator is over them
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,34 +154,75 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
 
-filetype on                          " try to detect filetypes
-filetype plugin indent on    " enable loading indent file for filetype
-"filetype plugin on
-
- 
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
 " my
 " Sets how many lines of history VIM has to remember
 set history=1500
 set undolevels=100
+" Remember info about open buffers on close
+set viminfo^=%
 
-if match($TERM, "screen")!=-1
-          set term=xterm-256color
-endif
 
-set whichwrap+=<,>,hl
+"source ~/.vim/.vimrc_set
+
+set foldmethod=indent
+set foldlevel=99
+"set textwidth=79
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set autowrite  "save all buffer when CTRL-z
+set background=dark
+set nopaste  " paste breaks tab competion 
+"set paste
+set incsearch
+
+syntax on 
+set ruler
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set showmatch
+
+" enable all Python syntax highlighting features
+let python_highlight_all = 1
+
+" la bö
+set cursorline
+set cursorcolumn
+set scrolloff=5
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+" my
+" Sets how many lines of history VIM has to remember
+set history=1500
+set undolevels=100
+" Remember info about open buffers on close
+set viminfo^=%
+
+"source ~/.vim/.vimrc_func
+
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-" Remember info about open buffers on close
-set viminfo^=%
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
@@ -176,11 +230,6 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
-" http://vim.wikia.com/wiki/GNU_Screen_integration
-map ^[[1~ <Home>
-map ^[[4~ <End>
-imap ^[[1~ <Home>
-imap ^[[4~ <End>
 
 
 " http://vim.wikia.com/wiki/Smart_mapping_for_tab_completion
@@ -206,3 +255,30 @@ function! Smart_TabComplete()
 endfunction
 
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""
+"colors & co
+set t_Co=256 "before colorscheme
+"colorscheme herald
+"colorscheme xoria256
+"colorscheme kalisi "light and dark favorit if more configurable (darker bg) 
+"
+"colo seoul256-light
+let g:seoul256_background = 233 " darker
+let g:seoul256_light_background = 253
+colo xoria256
+"colo herald
+"colo seoul256
+
+filetype on                          " try to detect filetypes
+filetype plugin indent on    " enable loading indent file for filetype
+"filetype plugin on
+
+ 
+
+if match($TERM, "screen")!=-1
+          set term=xterm-256color
+endif
+
+set whichwrap+=<,>,hl
