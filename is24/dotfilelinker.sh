@@ -1,12 +1,15 @@
 #! /bin/bash
-set -x
+#set -x
 MYPATH=/home/nox/github/noxdotfiles/is24
 cd /
 
 for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
     file=$(basename $dotfile)
-    if [ -e ~/$file ]; then
-	mv ~/$file ~/$file.orig-$(date +%F)
+    if [ -f ~/$file -a ! -L ~/$file ]; then
+	    mv ~/$file ~/$file.orig-$(date +%F)
     fi
-    ln -s $dotfile ~/$file
+    if ! [ -L ~/$file ]; then
+        echo "linking $file"
+        ln -s $dotfile ~/$file
+    fi
 done 	
