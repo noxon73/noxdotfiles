@@ -1,6 +1,11 @@
 #! /bin/bash
 #set -x
-MYPATH=/home/nox/github/noxdotfiles/is24
+MYPATH=~/github/noxdotfiles/is24
+
+if ! [ -d $MYPATH ] ; then
+	echo "expected checkout in $MYPATH"
+fi
+
 cd /
 
 for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
