@@ -268,7 +268,7 @@ set t_Co=256 "before colorscheme
 "colo seoul256-light
 let g:seoul256_background = 233 " darker
 let g:seoul256_light_background = 253
-colo xoria256
+"colo xoria256
 "colo herald
 "colo seoul256
 
