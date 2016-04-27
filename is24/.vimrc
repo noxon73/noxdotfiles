@@ -9,7 +9,8 @@
 
 
 "pathogen
-call pathogen#incubate()
+execute pathogen#infect('bundle/{}')
+"call pathogen#incubate()
 "call pathogen#helptags()
 "
 execute pathogen#infect()                                                                                                         
