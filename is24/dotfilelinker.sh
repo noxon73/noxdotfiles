@@ -18,3 +18,8 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
         ln -s $dotfile ~/$file
     fi
 done 	
+cd ~/.vim
+git submodule init
+git submodule update
+
+cd ~
