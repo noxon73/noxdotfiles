@@ -13,7 +13,7 @@ fi
 umask 022
 
 # files to be sourced
-for SRCFILE in /etc/bash_completion /.bash_aliases /.bashrc_functions /.bash_alias; do
+for SRCFILE in /etc/bash_completion ~/.bash_aliases ~/.bashrc_functions ~/.bash_alias; do
 	if [ -f $SRCFILE ]; then
 		. $SRCFILE
 	fi
