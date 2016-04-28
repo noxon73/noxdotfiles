@@ -4,6 +4,5 @@ if [ -f /etc/debian_version ]; then
     alias 1update='apt-get update && apt-get upgrade'
     alias 1search='apt-cache search '
     alias 1install='apt-get install '
+    alias 1show='apt-cache show'
 fi
-
-
