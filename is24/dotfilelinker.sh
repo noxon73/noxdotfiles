@@ -1,7 +1,11 @@
 #! /bin/bash
 #set -x
 MYPATH=~/github/noxdotfiles/is24
-
+# assure that this is run from actual dir i.e ./dotfilelinker.sh
+if [[ $0 != ./dotfilelinker.sh ]];then
+    echo "Please run this script from within the dir to avoid problems. Exit!"
+    exit 4
+fi
 if ! [ -d $MYPATH ] ; then
 	echo "expected checkout in $MYPATH"
 fi
