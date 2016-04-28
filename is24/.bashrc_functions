@@ -1,0 +1,22 @@
+#http://stackoverflow.com/questions/893585/how-to-parse-xml-in-bash
+read_dom () {
+    local IFS=\>
+    read -d \< ENTITY CONTENT
+}
+ 
+#tmux http://superuser.com/questions/249293/rename-tmux-window-name-to-prompt-command-ps1-or-remote-ssh-hostname
+settitle() {
+        printf "\033k$1\033\\"
+    }
+ 
+ssh() {
+       # use host as last parameter
+       settitle "${@: -1}"
+       command ssh "$@"
+       settitle "host"
+}
+vserver() {
+       settitle "$1"
+       command vserver "$@"
+       settitle "host"
+}

@@ -1,16 +1,14 @@
-#
-##
-### local changes to .bashrc_local!!!
-### otherwise they will be lost
-##
-#
-#echo "loading .bashrc"
 
 #always save history directly
 export PROMPT_COMMAND='history -a;'
-export HISTFILESIZE=100000
-export HISTSIZE=100000
+export HISTSIZE=100000 # in memory
+unset HISTFILESIZE #undefinite lines to remeber
 export HISTCONTROL=ignoredups
+shopt -s histappend
+
+if [ -d ~/bin ]; then
+    export PATH=~/bin:$PATH
+fi
 
 umask 022
 
@@ -50,5 +48,6 @@ if [ -f ~/.bashrc_local ]; then
         . ~/.bashrc_local
 fi
 ###################################
-
+ 
 cd ~
+
