@@ -18,10 +18,14 @@ alias mc='. /usr/libexec/mc/mc-wrapper.sh'
 alias vi='vim'
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 alias mtr='mtr --curses -o "LSD NBAWVJ" '
+alias vless="vim -u /usr/share/vim/vim71/macros/less.vim"
  
 # Docker
 alias 1da='docker attach '
 alias 1dps='docker ps '
+
+# vserver
+alias 1vs="vserver-stat"
 
 # GIT
 alias 1ga='git add '
@@ -31,6 +35,7 @@ alias 1gd2='git diff HEAD^^ HEAD -- '
 alias 1gd3='git diff HEAD^^^ HEAD -- '
 alias 1gm='git commit -m '
 alias 1gs='git status'
+alias 1gls='git ls-files '
 
 # Systemd
 alias 1sys="systemctl "
@@ -38,11 +43,28 @@ alias 1sysrestart="systemctl restart "
 alias 1sysstatus="systemctl status "
 
 # Work
-alias cdc='cd /data/home/egrehm/local/svn/config'
-alias cds='cd /data/home/egrehm/local/svn/source'
+if [ -d /data/home/egrehm/local/svn/config ]; then
+    alias cdc='cd /data/home/egrehm/local/svn/config'
+    alias cds='cd /data/home/egrehm/local/svn/source'
+elif [ -d /data/my/dockerbuild ]; then
+    alias cdm='cd /data/my;'
+    alias cds='cd /data/my/scripts; settitle codedir'
+    alias cdd='cd /data/my/dockerbuild/$dockdir; settitle dockdir'
+    alias 1data='cd /data/container-data; settitle datadir'
+fi
+
 alias ssht='TERM=xterm ssh '
 alias sshe='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l egrehm'
 alias svnup='cdc; svn up; cds; svn up'
+
+# other 
+
+alias 1psauxgrep='ps aux | grep -i '
+alias 1pstimesort='ps axwo time,nice,pid,args |sort | tail -10 '
+alias 1dmesggrep='dmesg | grep -i '
+alias 1pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
+alias 1mangle='iptables -t mangle -vnL'
+alias 1gpgkillandrestart="killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)"
 
 
 # Normal Colors
