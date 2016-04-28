@@ -17,12 +17,11 @@ alias mv='mv -i'
 alias mc='. /usr/libexec/mc/mc-wrapper.sh'
 alias vi='vim'
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+alias mtr='mtr --curses -o "LSD NBAWVJ" '
  
 # Docker
-alias da='docker attach '
-alias dps='docker ps '
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+alias 1da='docker attach '
+alias 1dps='docker ps '
 
 # GIT
 alias 1ga='git add '
