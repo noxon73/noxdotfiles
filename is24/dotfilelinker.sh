@@ -18,8 +18,12 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
 	    mv ~/$file ~/$file.orig-$(date +%F)
     fi
     if ! [ -L ~/$file ]; then
-        echo "linking $file"
-        ln -s $dotfile ~/$file
+        if [ x$file == xdotfilelinker.sh ]; then
+            continue
+        else    
+            echo "linking $file"
+            ln -s $dotfile ~/$file
+        fi
     fi
 done 	
 cd ~/.vim
