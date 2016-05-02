@@ -13,10 +13,13 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
     if [ -e ~/$file -a ! -L ~/$file ]; then
 	    mv ~/$file ~/$file.orig-$(date +%F)
     fi
+    if [ x$file == xpartial ] ; then
+        # only link single files within instead of whole dir
+        echo "partial not yet implemented"
+        continue
+    fi
     if ! [ -L ~/$file ]; then
-        if [ x$file == xdotfilelinker.sh ]; then
-            continue
-        else    
+        if ! [ x$file == xdotfilelinker.sh ]; then
             echo "linking $file"
             ln -s $dotfile ~/$file
         fi

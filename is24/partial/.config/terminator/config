@@ -1,0 +1,82 @@
+[global_config]
+  enabled_plugins = InactivityWatch, CustomCommandsMenu, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
+  inactive_color_offset = 0.67
+[keybindings]
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_1 = <Alt>1
+[profiles]
+  [[default]]
+    scrollback_lines = 10000
+    word_chars = "-A-Za-z0-9,./?%&#:_~"
+    background_image = None
+  [[green]]
+    background_darkness = 0.91
+    background_image = None
+    background_type = transparent
+    foreground_color = "#00ff00"
+  [[yellow]]
+    background_image = None
+    background_color = "#ffffdd"
+    foreground_color = "#000000"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+  [[triple]]
+    [[[child0]]]
+      position = 0:5
+      type = Window
+      order = 0
+      parent = ""
+      size = 1194, 1889
+    [[[child1]]]
+      labels = None, None
+      type = Notebook
+      order = 0
+      parent = child0
+    [[[child3]]]
+      position = 990
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[child5]]]
+      position = 597
+      type = HPaned
+      order = 1
+      parent = child3
+    [[[terminal2]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child1
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child3
+      command = ~/scripts/buildenv.sh berman01
+    [[[terminal7]]]
+      profile = yellow
+      type = Terminal
+      order = 1
+      parent = child5
+    [[[terminal6]]]
+      profile = green
+      type = Terminal
+      order = 0
+      parent = child5
+      command = ""
+[plugins]
+  [[CustomCommandsMenu]]
+    [[[test]]]
+      command = echo test
+      enabled = True
+      name = test
