@@ -64,7 +64,7 @@ alias 4pstimesort='ps axwo time,nice,pid,args |sort | tail -10 '
 alias 4dmesggrep='dmesg | grep -i '
 alias 4pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
 alias 4mangle='iptables -t mangle -vnL'
-alias 4gpgkillandrestart="killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)"
+alias 4gpgkillandrestart='killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)'
 
 
 # Normal Colors
