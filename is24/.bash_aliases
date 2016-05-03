@@ -21,26 +21,26 @@ alias mtr='mtr --curses -o "LSD NBAWVJ" '
 alias vless="vim -u /usr/share/vim/vim71/macros/less.vim"
  
 # Docker
-alias 1da='docker attach '
-alias 1dps='docker ps '
+alias 4da='docker attach '
+alias 4dps='docker ps '
 
 # vserver
-alias 1vs="vserver-stat"
+alias 4vs="vserver-stat"
 
 # GIT
-alias 1ga='git add '
-alias 1gaa='git add -A '
-alias 1gd1='git diff HEAD^ HEAD -- '
-alias 1gd2='git diff HEAD^^ HEAD -- '
-alias 1gd3='git diff HEAD^^^ HEAD -- '
-alias 1gm='git commit -m '
-alias 1gs='git status'
-alias 1gls='git ls-files '
+alias 4ga='git add '
+alias 4gaa='git add -A '
+alias 4gd1='git diff HEAD^ HEAD -- '
+alias 4gd2='git diff HEAD^^ HEAD -- '
+alias 4gd3='git diff HEAD^^^ HEAD -- '
+alias 4gm='git commit -m '
+alias 4gs='git status'
+alias 4gls='git ls-files '
 
 # Systemd
-alias 1sys="systemctl "
-alias 1sysrestart="systemctl restart "
-alias 1sysstatus="systemctl status "
+alias 4sys="systemctl "
+alias 4sysrestart="systemctl restart "
+alias 4sysstatus="systemctl status "
 
 # Work
 if [ -d /data/home/egrehm/local/svn/config ]; then
@@ -50,7 +50,7 @@ elif [ -d /data/my/dockerbuild ]; then
     alias cdm='cd /data/my;'
     alias cds='cd /data/my/scripts; settitle codedir'
     alias cdd='cd /data/my/dockerbuild/$dockdir; settitle dockdir'
-    alias 1data='cd /data/container-data; settitle datadir'
+    alias 4data='cd /data/container-data; settitle datadir'
 fi
 
 alias ssht='TERM=xterm ssh '
@@ -59,12 +59,12 @@ alias svnup='cdc; svn up; cds; svn up'
 
 # other 
 
-alias 1psauxgrep='ps aux | grep -i '
-alias 1pstimesort='ps axwo time,nice,pid,args |sort | tail -10 '
-alias 1dmesggrep='dmesg | grep -i '
-alias 1pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
-alias 1mangle='iptables -t mangle -vnL'
-alias 1gpgkillandrestart="killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)"
+alias 4psauxgrep='ps aux | grep -i '
+alias 4pstimesort='ps axwo time,nice,pid,args |sort | tail -10 '
+alias 4dmesggrep='dmesg | grep -i '
+alias 4pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
+alias 4mangle='iptables -t mangle -vnL'
+alias 4gpgkillandrestart="killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)"
 
 
 # Normal Colors

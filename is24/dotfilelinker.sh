@@ -7,6 +7,8 @@ if [[ $0 != ./dotfilelinker.sh ]];then
 fi
 
 MYPATH=$(pwd)
+#TODO: validate if there already is a .git dir in a parent path and warn then
+
 
 for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
     file=$(basename $dotfile)
