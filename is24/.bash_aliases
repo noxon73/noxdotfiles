@@ -23,6 +23,7 @@ alias vless="vim -u /usr/share/vim/vim71/macros/less.vim"
 # Docker
 alias 4da='docker attach '
 alias 4dps='docker ps '
+alias 4dnw='docker network ls'
 
 # vserver
 alias 4vs="vserver-stat"
@@ -39,7 +40,8 @@ alias 4gls='git ls-files '
 
 # Systemd
 alias 4sys="systemctl "
-alias 4sysrestart="systemctl restart "
+alias 4sysd="systemctl daemon-reload "
+alias 4sysrestart="4sysd; systemctl restart "
 alias 4sysstatus="systemctl status "
 
 # Work
