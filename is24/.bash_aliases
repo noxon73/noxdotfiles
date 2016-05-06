@@ -68,33 +68,33 @@ alias 4gpgkillandrestart='killall gpg-agent && eval $(/usr/bin/gpg-agent --daemo
 
 
 # Normal Colors
-Black='\e[0;30m'        # Black
-Red='\e[0;31m'          # Red
-Green='\e[0;32m'        # Green
-Yellow='\e[0;33m'       # Yellow
-Blue='\e[0;34m'         # Blue
-Purple='\e[0;35m'       # Purple
-Cyan='\e[0;36m'         # Cyan
-White='\e[0;37m'        # White
+BLACK='\e[0;30m'        # BLACK
+RED='\e[0;31m'          # RED
+GREEN='\e[0;32m'        # GREEN
+YELLOW='\e[0;33m'       # YELLOW
+BLUE='\e[0;34m'         # BLUE
+PURPLE='\e[0;35m'       # PURPLE
+CYAN='\e[0;36m'         # CYAN
+WHITE='\e[0;37m'        # WHITE
  
-# Bold
-BBlack='\e[1;30m'       # Black
-BRed='\e[1;31m'         # Red
-BGreen='\e[1;32m'       # Green
-BYellow='\e[1;33m'      # Yellow
-BBlue='\e[1;34m'        # Blue
-BPurple='\e[1;35m'      # Purple
-BCyan='\e[1;36m'        # Cyan
-BWhite='\e[1;37m'       # White
+# BOLD
+BBLACK='\e[1;30m'       # BLACK
+BRED='\e[1;31m'         # RED
+BGREEN='\e[1;32m'       # GREEN
+BYELLOW='\e[1;33m'      # YELLOW
+BBLUE='\e[1;34m'        # BLUE
+BPURPLE='\e[1;35m'      # PURPLE
+BCYAN='\e[1;36m'        # CYAN
+BWHITE='\e[1;37m'       # WHITE
  
-# Background
-On_Black='\e[40m'       # Black
-On_Red='\e[41m'         # Red
-On_Green='\e[42m'       # Green
-On_Yellow='\e[43m'      # Yellow
-On_Blue='\e[44m'        # Blue
-On_Purple='\e[45m'      # Purple
-On_Cyan='\e[46m'        # Cyan                                                                                                    
-On_White='\e[47m'       # White
+# BACKGROUND
+ON_BLACK='\e[40m'       # BLACK
+ON_RED='\e[41m'         # RED
+ON_GREEN='\e[42m'       # GREEN
+ON_YELLOW='\e[43m'      # YELLOW
+ON_BLUE='\e[44m'        # BLUE
+ON_PURPLE='\e[45m'      # PURPLE
+ON_CYAN='\e[46m'        # CYAN                                                                                                    
+ON_WHITE='\e[47m'       # WHITE
  
-NC="\e[m"               # Color Reset
+NC='\e[m'               # COLOR RESET
