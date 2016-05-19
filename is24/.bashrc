@@ -30,7 +30,7 @@ if [ x$USER = xroot ]; then
     if [ -f ~/.bash_aliases_root ]; then
         . ~/.bash_aliases_root
     fi 
-
+fi
 # do we want to handle PS1?
 
 ###################################
