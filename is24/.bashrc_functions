@@ -16,7 +16,17 @@ ssh() {
        settitle "host"
 }
 vserver() {
-       settitle "$1"
-       command vserver "$@"
-       settitle "host"
+    settitle "$1"
+    command vserver "$@"
+    settitle "host"
+}
+dotfileupdate() {
+    cd ~/github/noxdotfiles
+    if git pull | grep -q "Already up-to-date."; then
+        echo -e "${GREEN}dotfiles are up-to-date${NC}"
+    else
+        echo -e "${GREEN} Updated!$YELLOW sourcing ~/.bashrc $NC" 
+        source ~/.bashrc
+    fi
+    cd - > /dev/null
 }
