@@ -30,17 +30,8 @@ if [ x$USER = xroot ]; then
     if [ -f ~/.bash_aliases_root ]; then
         . ~/.bash_aliases_root
     fi 
-#    if !  $(hostname | grep -q nox.loc);then
-#	export PS1='\[\033[31;40m\]\h:\[\033[32;40m\]\w\[\033[33;40m\]$\[\033[0m\]'
-#    else
-	export PS1="\[\033[$COL;44m\]\h:\w\$\[\033[0m\] "
-#    fi
-############ /root  ############
 
-else
-    export PS1="\[\033[$COL;44m\]\u@\h:\w\$\[\033[0m\] "
-fi
-
+# do we want to handle PS1?
 
 ###################################
 # your changes and overwrites here:
