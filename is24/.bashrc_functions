@@ -30,3 +30,6 @@ dotfileupdate() {
     fi
     cd - > /dev/null
 }
+4upper() {
+    cd $(docker inspect --format '{{ .GraphDriver.Data.UpperDir }}' $1)
+}
