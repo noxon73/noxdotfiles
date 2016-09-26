@@ -14,11 +14,12 @@ alias l='ls $LS_OPTIONS -lA'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias mc='. /usr/libexec/mc/mc-wrapper.sh'
 alias vi='vim'
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 alias mtr='mtr --curses -o "LSD NBAWVJ" '
 alias vless="vim -u /usr/share/vim/vim71/macros/less.vim"
+alias i6="ip -6"
+alias ip6="ip -6"
  
 # Docker
 alias 4da='docker attach '
@@ -27,6 +28,9 @@ alias 4dnw='docker network ls'
 
 # vserver
 alias 4vs="vserver-stat"
+
+# tmux
+alias 4tm="sudo -i bash -c "'tmux a -d'"
 
 # GIT
 alias 4ga='git add '
@@ -43,6 +47,10 @@ alias 4sys="systemctl "
 alias 4sysd="systemctl daemon-reload "
 alias 4sysrestart="4sysd; systemctl restart "
 alias 4sysstatus="systemctl status "
+#try shorter completion
+alias s4="systemctl "
+alias s4restart="4sysd; systemctl restart "
+alias s4status="systemctl status "
 
 # Work
 if [ -d /data/home/egrehm/local/svn/config ]; then
