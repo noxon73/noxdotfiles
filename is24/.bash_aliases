@@ -30,7 +30,7 @@ alias 4dnw='docker network ls'
 alias 4vs="vserver-stat"
 
 # tmux
-alias 4tm="sudo -i bash -c "'tmux a -d'"
+alias 4tm="sudo -i bash -c 'tmux a -d'"
 
 # GIT
 alias 4ga='git add '
