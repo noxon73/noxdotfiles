@@ -121,7 +121,8 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-
+" use if you open file without sudo
+cmap w!! w !sudo tee %
 
 
 
