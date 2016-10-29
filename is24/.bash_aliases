@@ -37,12 +37,12 @@ alias 4tm="sudo -i bash -c 'tmux a -d'"
 
 # GIT
 alias 4ga='git add '
-alias 4gaa='git add -A '
+alias 4gs='git status'
+alias 4gaa='git add -A ; 4gs'
 alias 4gd1='git diff HEAD^ HEAD -- '
 alias 4gd2='git diff HEAD^^ HEAD -- '
 alias 4gd3='git diff HEAD^^^ HEAD -- '
 alias 4gm='git commit -m '
-alias 4gs='git status'
 alias 4gls='git ls-files '
 
 # Systemd
