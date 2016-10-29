@@ -26,11 +26,14 @@ alias 4da='docker attach '
 alias 4dps='docker ps '
 alias 4dnw='docker network ls'
 
+#Docker compose
+alias 4dc='docker-compose '
+
 # vserver
 alias 4vs="vserver-stat"
 
 # tmux
-alias 4tm="sudo -i bash -c "'tmux a -d'"
+alias 4tm="sudo -i bash -c 'tmux a -d'"
 
 # GIT
 alias 4ga='git add '
@@ -75,9 +78,7 @@ alias 4dmesggrep='dmesg | grep -i '
 alias 4pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
 alias 4mangle='iptables -t mangle -vnL'
 alias 4gpgkillandrestart='killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)'
-
-alias 4dotfileupdate="dotfileupdate"
-
+alias 4dotfileupdate='dotfileupdate'
 
 # Normal Colors
 BLACK='\e[0;30m'        # BLACK
