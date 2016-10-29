@@ -110,13 +110,19 @@ imap ^[[1~ <Home>
 imap ^[[4~ <End>
 
 "" Show matching brackets when text indicator is over them
+set showmatch
+set matchtime=3
+"http://vim.wikia.com/wiki/Moving_to_matching_braces
+" better manuall use "v%" to select text
+" noremap % v% 
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-
+" use if you open file without sudo
+cmap w!! w !sudo tee %
 
 
 
