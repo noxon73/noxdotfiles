@@ -79,6 +79,7 @@ alias 4pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
 alias 4mangle='iptables -t mangle -vnL'
 alias 4gpgkillandrestart='killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)'
 alias 4dotfileupdate='dotfileupdate'
+alias 4pb='virtualenv venv; . venv/bin/activate; pip install pybuilder; pyb install_dependencies'
 
 # Normal Colors
 BLACK='\e[0;30m'        # BLACK
