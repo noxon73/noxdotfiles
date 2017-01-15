@@ -43,7 +43,7 @@ done
 
 #completion
 git submodule init
-grep -q ". ./.complete_alias" complete-alias/completions/bash_completion.sh || echo ". ./.complete_alias" >> complete-alias/completions/bash_completion.sh
+grep -q ". ./.complete_alias" complete-alias/completions/bash_completion.sh || echo ". ~/.complete_alias" >> complete-alias/completions/bash_completion.sh
 if ! [[ -L ~/.bash_completion ]] ; then
     ln -s complete-alias/completions/bash_completion.sh ~/.bash_completion
 fi
