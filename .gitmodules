@@ -34,3 +34,6 @@
 [submodule "is24/.vim/bundle/seoul256.vim"]
 	path = is24/.vim/bundle/seoul256.vim
 	url = https://github.com/junegunn/seoul256.vim.git
+[submodule "is24/complete-alias"]
+	path = is24/complete-alias
+	url = https://github.com/cykerway/complete-alias.git

@@ -69,6 +69,7 @@ fi
 alias ssht='TERM=xterm ssh '
 alias sshe='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l egrehm'
 alias svnup='cdc; svn up; cds; svn up'
+alias 4svnup='cdc; svn up; cds; svn up'
 
 # other 
 

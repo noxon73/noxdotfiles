@@ -40,6 +40,15 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
         fi
     fi
 done 	
+
+#completion
+git submodule init
+grep -q ". ./.complete_alias" complete-alias/completions/bash_completion.sh || echo ". ./.complete_alias" >> complete-alias/completions/bash_completion.sh
+if ! [[ -L ~/.bash_completion ]] ; then
+    ln -s complete-alias/completions/bash_completion.sh ~/.bash_completion
+fi
+
+# vim submodules
 cd ~/.vim
 git submodule init
 git submodule update
