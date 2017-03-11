@@ -30,17 +30,25 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
 #        continue
 #        #### 
     fi
-    if [ -e ~/$file -a ! -L ~/$file ]; then
+    if [ x$file == .tmux.conf.color ]; then
+        if [-e ~/$file ]; then
+            echo "preserving $file"
+            continue
+        else
+            echo "you can customize your tmux colors in $file"
+            cp $dotfile ~/$file
+        fi
+    elif [ -e ~/$file -a ! -L ~/$file ]; then
 	    mv ~/$file ~/$file.orig-$(date +%F)
-    fi
-    if ! [ -L ~/$file ]; then
+    elif  ! [ -L ~/$file ];then
         if ! [ x$file == xdotfilelinker.sh ]; then
             echo "linking $file"
             ln -s $dotfile ~/$file
         fi
     fi
-done 	
 
+done
+# TODO: .tmux.conf preserve file modifications
 #completion
 git submodule init
 grep -q ". ./.complete_alias" complete-alias/completions/bash_completion.sh || echo ". ~/.complete_alias" >> complete-alias/completions/bash_completion.sh
