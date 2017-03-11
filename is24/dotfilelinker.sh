@@ -1,5 +1,5 @@
 #! /bin/bash
-#set -x
+set -x
 # assure that this is run from actual dir i.e ./dotfilelinker.sh
 if [[ $0 != ./dotfilelinker.sh ]];then
     echo "Please run this script from within the dir to avoid problems. Exit!"
@@ -30,7 +30,7 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
 #        continue
 #        #### 
     fi
-    if [ x$file == .tmux.conf.color ]; then
+    if [ x$file == x.tmux.conf.color ]; then
         if [-e ~/$file ]; then
             echo "preserving $file"
             continue
@@ -52,16 +52,20 @@ done
 #completion
 cd ~/complete-alias
 git submodule init
+git submodule update
+
 grep -q ". ./.complete_alias" completions/bash_completion.sh || echo ". ~/.complete_alias" >> completions/bash_completion.sh
 if ! [[ -L ~/.bash_completion ]] ; then
     ln -s completions/bash_completion.sh ~/.bash_completion
 fi
-
+echo foo
 # vim submodules
 cd ~/.vim
 git submodule init
 git submodule update
+echo foo
 
+cd ~
 # zsh
 if $(which zsh); then
     if ! [ -d ~/.oh-my-zsh/ ]; then
@@ -71,4 +75,5 @@ else
     echo 'No zsh installed'
 fi
 
+echo foo
 cd ~
