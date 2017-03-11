@@ -53,4 +53,13 @@ cd ~/.vim
 git submodule init
 git submodule update
 
+# zsh
+if $(which zsh); then
+    if ! [ -d ~/.oh-my-zsh/ ]; then
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    fi
+else
+    echo 'No zsh installed'
+fi
+
 cd ~
