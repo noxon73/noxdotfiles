@@ -50,10 +50,11 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
 done
 # TODO: .tmux.conf preserve file modifications
 #completion
+cd ~/complete-alias
 git submodule init
-grep -q ". ./.complete_alias" complete-alias/completions/bash_completion.sh || echo ". ~/.complete_alias" >> complete-alias/completions/bash_completion.sh
+grep -q ". ./.complete_alias" completions/bash_completion.sh || echo ". ~/.complete_alias" >> completions/bash_completion.sh
 if ! [[ -L ~/.bash_completion ]] ; then
-    ln -s complete-alias/completions/bash_completion.sh ~/.bash_completion
+    ln -s completions/bash_completion.sh ~/.bash_completion
 fi
 
 # vim submodules
