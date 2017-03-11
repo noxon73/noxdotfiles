@@ -26,6 +26,9 @@ alias 4da='docker attach '
 alias 4dps='docker ps '
 alias 4dnw='docker network ls'
 
+#Docker compose
+alias 4dc='docker-compose '
+
 # vserver
 alias 4vs="vserver-stat"
 
@@ -34,12 +37,12 @@ alias 4tm="sudo -i bash -c 'tmux a -d'"
 
 # GIT
 alias 4ga='git add '
-alias 4gaa='git add -A '
+alias 4gs='git status'
+alias 4gaa='git add -A ; 4gs'
 alias 4gd1='git diff HEAD^ HEAD -- '
 alias 4gd2='git diff HEAD^^ HEAD -- '
 alias 4gd3='git diff HEAD^^^ HEAD -- '
 alias 4gm='git commit -m '
-alias 4gs='git status'
 alias 4gls='git ls-files '
 
 # Systemd
@@ -66,6 +69,7 @@ fi
 alias ssht='TERM=xterm ssh '
 alias sshe='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l egrehm'
 alias svnup='cdc; svn up; cds; svn up'
+alias 4svnup='cdc; svn up; cds; svn up'
 
 # other 
 
@@ -75,9 +79,8 @@ alias 4dmesggrep='dmesg | grep -i '
 alias 4pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
 alias 4mangle='iptables -t mangle -vnL'
 alias 4gpgkillandrestart='killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)'
-
-alias 4dotfileupdate="dotfileupdate"
-
+alias 4dotfileupdate='dotfileupdate'
+alias 4pb='virtualenv venv; . venv/bin/activate; pip install pybuilder; pyb install_dependencies'
 
 # Normal Colors
 BLACK='\e[0;30m'        # BLACK
