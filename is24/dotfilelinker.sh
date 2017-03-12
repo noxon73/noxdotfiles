@@ -1,5 +1,5 @@
 #! /bin/bash
-set -x
+#set -x
 # assure that this is run from actual dir i.e ./dotfilelinker.sh
 if [[ $0 != ./dotfilelinker.sh ]];then
     echo "Please run this script from within the dir to avoid problems. Exit!"
@@ -39,13 +39,15 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
             cp $dotfile ~/$file
         fi
     elif [ -e ~/$file -a ! -L ~/$file ]; then
-	    mv ~/$file ~/$file.orig-$(date +%F)
-    elif  ! [ -L ~/$file ];then
-        if ! [ x$file == xdotfilelinker.sh ]; then
-            echo "linking $file"
-            ln -s $dotfile ~/$file
-        fi
+        echo "moving ~/$file ~/$file.orig-$(date +%F)"
+        mv ~/$file ~/$file.orig-$(date +%F)
+        echo "linking $file"
+        ln -s $dotfile ~/$file                                                                                         
+    elif ! [ x$file == xdotfilelinker.sh ]; then
+        echo "linking $file"
+        ln -s $dotfile ~/$file
     fi
+
 
 done
 # TODO: .tmux.conf preserve file modifications
@@ -58,12 +60,10 @@ grep -q ". ./.complete_alias" completions/bash_completion.sh || echo ". ~/.compl
 if ! [[ -L ~/.bash_completion ]] ; then
     ln -s completions/bash_completion.sh ~/.bash_completion
 fi
-echo foo
 # vim submodules
 cd ~/.vim
 git submodule init
 git submodule update
-echo foo
 
 cd ~
 # zsh
@@ -75,5 +75,4 @@ else
     echo 'No zsh installed'
 fi
 
-echo foo
 cd ~
