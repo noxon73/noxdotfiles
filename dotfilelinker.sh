@@ -1,5 +1,7 @@
 #! /bin/bash
 #set -x
+#cleanup with: find ~ -maxdepth 1 -type l -exec unlink {} \;
+
 # assure that this is run from actual dir i.e ./dotfilelinker.sh
 if [[ $0 != ./dotfilelinker.sh ]];then
     echo "Please run this script from within the dir to avoid problems. Exit!"
@@ -10,26 +12,9 @@ MYPATH=$(pwd)
 #TODO: validate if there already is a .git dir in a parent path and warn then
 
 
-for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
+#for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
+for dotfile in $(ls dotfiles -a -c1 | grep "[a-Z0-9]"); do
     file=$(basename $dotfile)
-    if [ x$file == xpartial ] ; then
-        # only link single files within instead of whole dir
-        echo "partial not yet implemented. Please link yourself if needed"
-        continue
-
-#        ### fix later
-#        cd $file
-#        for DIR in $(find  -type d | sed s'#./#~/#' | grep /); do
-#            mkdir -p $DIR
-#        done
-#        for FILE in $(find  -type d | sed s'#./#~/#' | grep /); do
-#            if [ -e $FILE -a ! -L $FILE ]; then
-#	            mv $FILE $FILE.orig-$(date +%F)
-#            fi
-#        done
-#        continue
-#        #### 
-    fi
     if [ x$file == x.tmux.conf.color ]; then
         if [ -e ~/$file ]; then
             echo "preserving $file"
@@ -42,24 +27,24 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
         echo "moving ~/$file ~/$file.orig-$(date +%F)"
         mv ~/$file ~/$file.orig-$(date +%F)
         echo "linking $file"
-        ln -s $dotfile ~/$file                                                                                         
-    elif ! [ x$file == xdotfilelinker.sh ]; then
+        ln -s ${MYPATH}/dotfiles/${dotfile} ~/$file                                                                                         
+    elif [ ! -e ~/$file ]; then
         echo "linking $file"
-        ln -s $dotfile ~/$file
+        ln -s ${MYPATH}/dotfiles/${dotfile} ~/$file
+    else 
+	echo "$file is already linked"                                                                                         
     fi
 
 
 done
-# TODO: .tmux.conf preserve file modifications
-#completion
-cd ~/complete-alias
-git submodule init
-git submodule update
+#cd ~/complete-alias
+#git submodule init
+#git submodule update
 
-grep -q ". ./.complete_alias" completions/bash_completion.sh || echo ". ~/.complete_alias" >> completions/bash_completion.sh
-if ! [[ -L ~/.bash_completion ]] ; then
-    ln -s completions/bash_completion.sh ~/.bash_completion
-fi
+#grep -q ". ./.complete_alias" completions/bash_completion.sh || echo ". ~/.complete_alias" >> completions/bash_completion.sh
+#if ! [[ -L ~/.bash_completion ]] ; then
+#    ln -s completions/bash_completion.sh ~/.bash_completion
+#fi
 # vim submodules
 cd ~/.vim
 git submodule init

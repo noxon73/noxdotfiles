@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/data/my/dockerbuild/host-netcup/bind/server-root/etc/bind'
+let g:netrw_dirhist_2='/data/my/dockerbuild/host-netcup/icinga/server-root'
+let g:netrw_dirhist_3='/data/my/dockerbuild/host-netcup/icinga/server-root/root'
+let g:netrw_dirhist_4='/data/my/dockerbuild/host-netcup/mail'
+let g:netrw_dirhist_5='/data/my/dockerbuild/host-netcup/mail/server-root'
+let g:netrw_dirhist_6='/data/my/dockerbuild/host-netcup/ansible'
