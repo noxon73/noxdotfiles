@@ -31,7 +31,7 @@ for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
 #        #### 
     fi
     if [ x$file == x.tmux.conf.color ]; then
-        if [-e ~/$file ]; then
+        if [ -e ~/$file ]; then
             echo "preserving $file"
             continue
         else
