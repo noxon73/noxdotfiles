@@ -2,9 +2,17 @@
 #set -x
 #cleanup with: find ~ -maxdepth 1 -type l -exec unlink {} \;
 
+#Centos 7 has still git 1.8
+if $(git --version | awk '{ print $3 }' | grep -q ^1) ; then
+    echo "git version <2 is not supported"
+    exit 5
+fi
+
 # assure that this is run from actual dir i.e ./dotfilelinker.sh
 if [[ $0 != ./dotfilelinker.sh ]];then
     echo "Please run this script from within the dir to avoid problems. Exit!"
+    echo "you could try to git a repo with newer i.e. : 
+    yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm && yum update git"
     exit 4
 fi
 
