@@ -87,3 +87,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.bash_aliases
+export prompt='%{$fg[$NCOLOR]%}%B%m%b%{$reset_color%}:%{$fg[green]%}%B%c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$)'
