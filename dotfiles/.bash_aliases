@@ -111,7 +111,6 @@ ON_GREEN='\e[42m'       # GREEN
 ON_YELLOW='\e[43m'      # YELLOW
 ON_BLUE='\e[44m'        # BLUE
 ON_PURPLE='\e[45m'      # PURPLE
-ON_CYAN='\e[46m'        # CYAN                                                                                                    
 ON_WHITE='\e[47m'       # WHITE
  
 NC='\e[m'               # COLOR RESET
