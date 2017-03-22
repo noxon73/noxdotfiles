@@ -44,6 +44,7 @@ alias 4gd2='git diff HEAD^^ HEAD -- '
 alias 4gd3='git diff HEAD^^^ HEAD -- '
 alias 4gm='git commit -m '
 alias 4gls='git ls-files '
+alias 4gc='git config --global credential.helper cache; git config --global credential.helper "cache --timeout=1800"'
 
 # Systemd
 alias 4sys="systemctl "
