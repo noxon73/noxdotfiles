@@ -1,39 +1,39 @@
-[submodule "dotdirs/.vim/bundle/vim-kalisi"]
-	path = dotdirs/.vim/bundle/vim-kalisi
+[submodule "dotfiles/.vim/bundle/vim-kalisi"]
+	path = dotfiles/.vim/bundle/vim-kalisi
 	url = git://github.com/freeo/vim-kalisi.git
-[submodule "dotdirs/.vim/bundle/nerdtree"]
-	path = dotdirs/.vim/bundle/nerdtree
+[submodule "dotfiles/.vim/bundle/nerdtree"]
+	path = dotfiles/.vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree
-[submodule "dotdirs/.vim/bundle/syntastic"]
-	path = dotdirs/.vim/bundle/syntastic
+[submodule "dotfiles/.vim/bundle/syntastic"]
+	path = dotfiles/.vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "dotdirs/.vim/bundle/tagbar"]
-	path = dotdirs/.vim/bundle/tagbar
+[submodule "dotfiles/.vim/bundle/tagbar"]
+	path = dotfiles/.vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "dotdirs/.vim/bundle/python-syntax"]
-	path = dotdirs/.vim/bundle/python-syntax
+[submodule "dotfiles/.vim/bundle/python-syntax"]
+	path = dotfiles/.vim/bundle/python-syntax
 	url = git://github.com/hdima/python-syntax.git
-[submodule "dotdirs/.vim/bundle/vim-virtualenv"]
-	path = dotdirs/.vim/bundle/vim-virtualenv
+[submodule "dotfiles/.vim/bundle/vim-virtualenv"]
+	path = dotfiles/.vim/bundle/vim-virtualenv
 	url = git://github.com/jmcantrell/vim-virtualenv.git
-[submodule "dotdirs/.vim/bundle/vim-airline"]
-	path = dotdirs/.vim/bundle/vim-airline
+[submodule "dotfiles/.vim/bundle/vim-airline"]
+	path = dotfiles/.vim/bundle/vim-airline
 	url = git://github.com/vim-airline/vim-airline.git
-[submodule "dotdirs/.vim/bundle/vim-fugitive"]
-	path = dotdirs/.vim/bundle/vim-fugitive
+[submodule "dotfiles/.vim/bundle/vim-fugitive"]
+	path = dotfiles/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "dotdirs/.vim/bundle/pep8"]
-	path = dotdirs/.vim/bundle/pep8
+[submodule "dotfiles/.vim/bundle/pep8"]
+	path = dotfiles/.vim/bundle/pep8
 	url = https://github.com/vim-scripts/pep8.git
-[submodule "dotdirs/.vim/bundle/Gundo"]
-	path = dotdirs/.vim/bundle/Gundo
+[submodule "dotfiles/.vim/bundle/Gundo"]
+	path = dotfiles/.vim/bundle/Gundo
 	url = https://github.com/vim-scripts/Gundo.git
-[submodule "dotdirs/.vim/bundle/xoria256.vim"]
-	path = dotdirs/.vim/bundle/xoria256.vim
+[submodule "dotfiles/.vim/bundle/xoria256.vim"]
+	path = dotfiles/.vim/bundle/xoria256.vim
 	url = https://github.com/vim-scripts/xoria256.vim.git
-[submodule "dotdirs/.vim/bundle/seoul256.vim"]
-	path = dotdirs/.vim/bundle/seoul256.vim
+[submodule "dotfiles/.vim/bundle/seoul256.vim"]
+	path = dotfiles/.vim/bundle/seoul256.vim
 	url = https://github.com/junegunn/seoul256.vim.git
-[submodule "dotdirs/complete-alias"]
-	path = dotdirs/complete-alias
+[submodule "dotfiles/complete-alias"]
+	path = dotfiles/complete-alias
 	url = https://github.com/cykerway/complete-alias.git
