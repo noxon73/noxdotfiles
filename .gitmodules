@@ -34,6 +34,3 @@
 [submodule "dotfiles/.vim/bundle/seoul256.vim"]
 	path = dotfiles/.vim/bundle/seoul256.vim
 	url = https://github.com/junegunn/seoul256.vim.git
-[submodule "dotfiles/complete-alias"]
-	path = dotfiles/complete-alias
-	url = https://github.com/cykerway/complete-alias.git
