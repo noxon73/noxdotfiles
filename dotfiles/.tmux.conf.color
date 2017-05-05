@@ -1,7 +1,10 @@
 # just configure your custom status line
 # this setttings will be preservedfrom dotfile updates
+# colorlist
+# for i in {0..255}; do printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n";done
 set -g status-bg black
 set -g status-fg green
+#set -g status-fg "colour202"
 set-window-option -g window-status-current-bg yellow
 set -g status-left ' #[fg=green,bold]#H#[default]'
 set -g status-right '#[fg=yellow,bold]#(cut -d " " -f 1-4 /proc/loadavg)#[default] #[fg=cyan,bold]%d.%b #[fg=red,bold bg=black]%H:%M:%S#[default] ' 

@@ -29,22 +29,21 @@ for dotfile in $(ls dotfiles -a -c1 | grep "[a-zA-Z0-9]"); do
             continue
         else
             echo "you can customize your tmux colors in $file"
-            cp $dotfile ~/$file
+            cp ${MYPATH}/dotfiles/${dotfile} ~/$file
         fi
     elif [ -e ~/$file -a ! -L ~/$file ]; then
         echo "moving ~/$file ~/$file.orig-$(date +%F)"
         mv ~/$file ~/$file.orig-$(date +%F)
         echo "linking $file"
-        ln -s ${MYPATH}/dotfiles/${dotfile} ~/$file                                                                                         
+        ln -s ${MYPATH}/dotfiles/${dotfile} ~/$file
     elif [ ! -e ~/$file ]; then
         echo "linking $file"
         ln -s ${MYPATH}/dotfiles/${dotfile} ~/$file
     else 
-	echo "$file is already linked"                                                                                         
+	echo "$file is already linked"
     fi
-
-
 done
+
 #cd ~/complete-alias
 #git submodule init
 #git submodule update
