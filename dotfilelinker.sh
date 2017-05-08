@@ -21,7 +21,7 @@ MYPATH=$(pwd)
 
 
 #for dotfile in $(find $MYPATH -maxdepth 1| grep "/"); do
-for dotfile in $(ls dotfiles -a -c1 | grep "[a-zA-Z0-9]"); do
+for dotfile in $(ls -a -c1 dotfiles | grep "[a-zA-Z0-9]"); do
     file=$(basename $dotfile)
     if [ x$file == x.tmux.conf.color ]; then
         if [ -e ~/$file ]; then
