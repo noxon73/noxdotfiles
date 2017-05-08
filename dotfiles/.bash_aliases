@@ -83,6 +83,7 @@ alias 4gpgkillandrestart='killall gpg-agent && eval $(/usr/bin/gpg-agent --daemo
 alias 4dotfileupdate='dotfileupdate'
 alias dotfileupdate='cd ~/github/noxdotfiles; git pull; ./dotfilelinker.sh'
 alias 4pb='virtualenv venv; . venv/bin/activate; pip install pybuilder; pyb install_dependencies'
+alias stups='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/stups.pem -l is24'
 
 # Normal Colors
 BLACK='\e[0;30m'        # BLACK
