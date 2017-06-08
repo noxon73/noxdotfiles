@@ -1,7 +1,4 @@
 # System
-#gnu only export LS_OPTIONS='--color=auto'
-export LS_OPTIONS=''
-#eval `dircolors`
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
 alias egrep='egrep --color=auto'
