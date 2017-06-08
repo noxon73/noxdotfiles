@@ -43,6 +43,10 @@ else # should be linux
     eval `dircolors`
 fi
 
+### TODO Handle linux distribution specific aliases (yum vs apt)
+###      Handle work and privat aliases better
+
+
 ###################################
 # your changes and overwrites here:
 if [ -f ~/.bashrc_local ]; then
