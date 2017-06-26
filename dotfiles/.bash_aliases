@@ -21,6 +21,9 @@ alias vless="vim -u /usr/share/vim/vim71/macros/less.vim"
 alias i6="ip -6"
 alias ip6="ip -6"
  
+# yum
+alias 4yumupdate='yum  --enablerepo=elrepo-kernel update'
+
 # Docker
 alias 4da='docker attach '
 alias 4dps='docker ps '
