@@ -76,6 +76,7 @@ alias 4svnup='cdc; svn up; cds; svn up'
 # other 
 
 alias 4psauxgrep='ps aux | grep -i '
+alias 4dfNoTmpfs='df -h | grep -v tmpfs '
 alias 4pstimesort='ps axwo time,nice,pid,args |sort | tail -10 '
 alias 4dmesggrep='dmesg | grep -i '
 alias 4pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
