@@ -1,6 +1,4 @@
 # System
-export LS_OPTIONS='--color=auto'
-eval `dircolors`
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
 alias egrep='egrep --color=auto'
@@ -21,6 +19,9 @@ alias vless="vim -u /usr/share/vim/vim71/macros/less.vim"
 alias i6="ip -6"
 alias ip6="ip -6"
  
+# yum
+alias 4yumupdate='yum  --enablerepo=elrepo-kernel update'
+
 # Docker
 alias 4da='docker attach '
 alias 4dps='docker ps '
@@ -75,6 +76,7 @@ alias 4svnup='cdc; svn up; cds; svn up'
 # other 
 
 alias 4psauxgrep='ps aux | grep -i '
+alias 4dfNoTmpfs='df -h | grep -v tmpfs '
 alias 4pstimesort='ps axwo time,nice,pid,args |sort | tail -10 '
 alias 4dmesggrep='dmesg | grep -i '
 alias 4pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
@@ -83,6 +85,7 @@ alias 4gpgkillandrestart='killall gpg-agent && eval $(/usr/bin/gpg-agent --daemo
 alias 4dotfileupdate='dotfileupdate'
 alias dotfileupdate='cd ~/github/noxdotfiles; git pull; ./dotfilelinker.sh'
 alias 4pb='virtualenv venv; . venv/bin/activate; pip install pybuilder; pyb install_dependencies'
+alias stups='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/stups.pem -l is24'
 
 # Normal Colors
 BLACK='\e[0;30m'        # BLACK

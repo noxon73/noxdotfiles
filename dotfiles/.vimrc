@@ -124,6 +124,8 @@ map <C-l> <C-W>l
 " use if you open file without sudo
 cmap w!! w !sudo tee %
 
+" yaml indentation
+au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 
 set foldmethod=indent

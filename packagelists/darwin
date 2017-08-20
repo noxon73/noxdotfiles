@@ -1,0 +1,7 @@
+brew
+virtualenv
+    flake8
+    python 3
+spectacle (keybindings)
+media altelier (app bindings)
+
