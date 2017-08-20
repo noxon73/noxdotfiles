@@ -88,3 +88,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.bash_aliases
 export prompt='%{$fg[$NCOLOR]%}%B%m%b%{$reset_color%}:%{$fg[green]%}%B%c/%b%{$reset_color%}$(git_prompt_info)%'
+#export prompt='%{$fg[green]%}%B%m%b%{$reset_color%}:%{$fg[yellow]%}%B%c/%b%{$reset_color%}$(git_prompt_info)%'
+# configure boot prompt here
+if [[ -e ~/.zshrc_local ]] ; then
+    source ~/.zshrc_local
+fi
+

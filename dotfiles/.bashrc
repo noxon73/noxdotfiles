@@ -1,10 +1,10 @@
-
-#always save history directly
-export PROMPT_COMMAND='history -a;'
 export HISTSIZE=100000 # in memory
 unset HISTFILESIZE #undefinite lines to remeber
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoredups:erasedups  
 shopt -s histappend
+#always save history directly
+#export PROMPT_COMMAND='history -a;'
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 if [ -d ~/bin ]; then
     export PATH=~/bin:$PATH
@@ -20,11 +20,7 @@ for SRCFILE in /etc/bash_completion ~/.bash_aliases ~/.bashrc_functions ~/.bash_
 done
 
 
-#if $(hostname | grep -q secure-you); then
-#	COL=31
-#else 
-#	COL=37 
-#fi
+
 ############ root  ############
 if [ x$USER = xroot ]; then 
     if [ -f ~/.bash_aliases_root ]; then
