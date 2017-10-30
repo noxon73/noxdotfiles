@@ -94,3 +94,5 @@ if [[ -e ~/.zshrc_local ]] ; then
     source ~/.zshrc_local
 fi
 
+# make prompt configurable
+autoload -U promptinit && promptinit
