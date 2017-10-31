@@ -25,6 +25,8 @@ alias 4yumupdate='yum  --enablerepo=elrepo-kernel update'
 # Docker
 alias 4da='docker attach '
 alias 4dps='docker ps '
+alias 4dlast='docker ps |head -4'
+alias 4dkilllast="echo '### going tokill the last started container!!!';docker rm -f $(docker ps |head -2| tail -1 | awk '{ print $1 }')"
 alias 4dnw='docker network ls'
 
 #Docker compose
@@ -57,6 +59,12 @@ alias s4="systemctl "
 alias s4restart="4sysd; systemctl restart "
 alias s4status="systemctl status "
 
+# k8s -kubernetes
+alias 4kgp="kubectl get po --all-namespaces -o wide"
+alias 4kgs="kubectl get svc --all-namespaces -o wide"
+alias 4kgns="kubectl get ns --all-namespaces"
+alias 4kapply="kubectl apply -f "
+alias 4klogssystem="kubectl logs -n kube-system "
 # Work
 if [ -d /data/home/egrehm/local/svn/config ]; then
     alias cdc='cd /data/home/egrehm/local/svn/config'
