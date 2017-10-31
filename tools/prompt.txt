@@ -1,3 +1,8 @@
+###
 export PROMPT='%{$fg[green]%}%B%m%b%{$reset_color%}:%{$fg[blue]%}%B%d/%{$fg[grey]%}_______________________________________________%{$fg[blue]%}h%!_e%?_%b%{$reset_color%}$(git_prompt_info)%
 
 %{$fg[green]%}~>%#%{$reset_color%} '
+###### adam2?
+###export PROMPT='%B%F{cyan}.%b%F{cyan}-%B%F{black}(%B%F{green}%~%B%F{black})%b%F{cyan}------------------------------------------------------------------%B%F{black}(%b%F{cyan}%n%B%F{cyan}@%b%F{cyan}%m%B%F{black})%b%F{cyan}-
+###%}%B%F{cyan}\`-%b%F{cyan}-%B%F{white}%B%F{white}%(!.#.>) %b%f%k'
+
