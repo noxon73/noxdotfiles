@@ -1,0 +1,9 @@
+# Docker
+alias 4da='docker attach '
+alias 4dps='docker ps '
+alias 4dlast='docker ps |head -4'
+alias 4dkilllast="echo '### going tokill the last started container!!!';docker rm -f $(docker ps |head -2| tail -1 | awk '{ print $1 }')"
+alias 4dnw='docker network ls'
+
+#Docker compose
+alias 4dc='docker-compose '

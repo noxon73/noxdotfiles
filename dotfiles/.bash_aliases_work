@@ -1,0 +1,15 @@
+# Work
+if [ -d /data/home/egrehm/local/svn/config ]; then
+    alias cdc='cd /data/home/egrehm/local/svn/config'
+    alias cds='cd /data/home/egrehm/local/svn/source'
+    alias svnup='cdc; svn up; cds; svn up'
+    alias 4svnup='cdc; svn up; cds; svn up'
+elif [ -d /data/my/dockerbuild ]; then
+    alias cdm='cd /data/my;'
+    alias cds='cd /data/my/scripts; settitle codedir'
+    alias cdd='cd /data/my/dockerbuild/$dockdir; settitle dockdir'
+    alias 4data='cd /data/container-data; settitle datadir'
+fi
+
+#ssh
+alias sshe='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l egrehm'

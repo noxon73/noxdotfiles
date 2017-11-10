@@ -5,7 +5,16 @@
 OS=$(uname -s)
 
 f_source_aliases(){
+    # source only relevant aliases
 
+    # Darwin vs Linux
+      # .bash_aliases_darwin 
+    # root ?
+      #  .bash_aliases_root 
+    # office vs priv
+    # split in different files: git, docker, k8s, rest, private 
+    # .bash_aliases .bash_aliases_color .bash_aliases_docker .bash_aliases_git .bash_aliases_k8s .bash_aliases_other.bash_aliases_ssh .bash_aliases_work
+    echo
 }
 #Centos 7 has still git 1.8
 if $(git --version | awk '{ print $3 }' | grep -q ^1) ; then

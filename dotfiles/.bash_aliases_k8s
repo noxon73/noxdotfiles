@@ -1,0 +1,6 @@
+# k8s -kubernetes
+alias 4kgp="kubectl get po --all-namespaces -o wide"
+alias 4kgs="kubectl get svc --all-namespaces -o wide"
+alias 4kgns="kubectl get ns --all-namespaces"
+alias 4kapply="kubectl apply -f "
+alias 4klogssystem="kubectl logs -n kube-system "

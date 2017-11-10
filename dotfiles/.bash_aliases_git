@@ -1,0 +1,10 @@
+# GIT
+alias 4ga='git add '
+alias 4gs='git status'
+alias 4gaa='git add -A ; 4gs'
+alias 4gd1='git diff HEAD^ HEAD -- '
+alias 4gd2='git diff HEAD^^ HEAD -- '
+alias 4gd3='git diff HEAD^^^ HEAD -- '
+alias 4gm='git commit -m '
+alias 4gls='git ls-files '
+alias 4gc='git config --global credential.helper cache; git config --global credential.helper "cache --timeout=1800"'

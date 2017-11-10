@@ -1,0 +1,52 @@
+# System
+alias ..='cd ..'
+alias ...='cd ..; cd ..'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l.='ls -d .* --color=auto'
+alias ll='ls -l --color=auto'
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias vi='vim'
+#does not work everywhere alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+alias mtr='mtr --curses -o "LSD NBAWVJ" '
+alias vless="vim -u /usr/share/vim/vim71/macros/less.vim"
+alias i6="ip -6"
+alias ip6="ip -6"
+ 
+# yum
+alias 4yumupdate='yum  --enablerepo=elrepo-kernel update'
+
+# vserver
+alias 4vs="vserver-stat"
+
+# tmux
+alias 4tm="sudo -i bash -c 'tmux a -d'"
+
+# Systemd
+alias 4sys="systemctl "
+alias 4sysd="systemctl daemon-reload "
+alias 4sysrestart="4sysd; systemctl restart "
+alias 4sysstatus="systemctl status "
+#try shorter completion
+alias s4="systemctl "
+alias s4restart="4sysd; systemctl restart "
+alias s4status="systemctl status "
+# other 
+
+alias 4psauxgrep='ps aux | grep -i '
+alias 4dfNoTmpfs='df -h | grep -v tmpfs '
+alias 4pstimesort='ps axwo time,nice,pid,args |sort | tail -10 '
+alias 4dmesggrep='dmesg | grep -i '
+alias 4pathsearch='ls `echo $PATH | tr ":" " "` | grep -i '
+alias 4mangle='iptables -t mangle -vnL'
+alias 4gpgkillandrestart='killall gpg-agent && eval $(/usr/bin/gpg-agent --daemon| tee ~/.gnupg/gpg-agent.env)'
+alias 4dotfileupdate='dotfileupdate'
+alias dotfileupdate='cd ~/github/noxdotfiles; git pull; ./dotfilelinker.sh'
+alias 4pb='virtualenv venv; . venv/bin/activate; pip install pybuilder; pyb install_dependencies'
+alias stups='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/stups.pem -l is24'

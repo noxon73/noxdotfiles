@@ -1,0 +1,3 @@
+#ssh
+alias ssht='TERM=xterm ssh '
+alias ec2ssh="ssh -l ec2-user -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
