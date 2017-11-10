@@ -2,6 +2,11 @@
 #set -x
 #cleanup with: find ~ -maxdepth 1 -type l -exec unlink {} \;
 
+OS=$(uname -s)
+
+f_source_aliases(){
+
+}
 #Centos 7 has still git 1.8
 if $(git --version | awk '{ print $3 }' | grep -q ^1) ; then
     echo "git version <2 is not supported"
