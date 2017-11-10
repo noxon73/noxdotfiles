@@ -67,11 +67,16 @@ elif [ -d /data/my/dockerbuild ]; then
     alias cdd='cd /data/my/dockerbuild/$dockdir; settitle dockdir'
     alias 4data='cd /data/container-data; settitle datadir'
 fi
-
+#ssh
 alias ssht='TERM=xterm ssh '
 alias sshe='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l egrehm'
+alias ec2ssh="ssh -l ec2-user -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+
 alias svnup='cdc; svn up; cds; svn up'
 alias 4svnup='cdc; svn up; cds; svn up'
+
+#MAC
+alias 4docker_screen="screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty"
 
 # other 
 
