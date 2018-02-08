@@ -1,26 +1,26 @@
 #http://stackoverflow.com/questions/893585/how-to-parse-xml-in-bash
-read_dom () {
+read_dom(){
     local IFS=\>
     read -d \< ENTITY CONTENT
 }
  
 #tmux http://superuser.com/questions/249293/rename-tmux-window-name-to-prompt-command-ps1-or-remote-ssh-hostname
-settitle() {
+settitle(){
         printf "\033k$1\033\\"
     }
  
-ssh() {
+ssh(){
        # use host as last parameter
        settitle "${@: -1}"
        command ssh "$@"
        settitle "host"
 }
-vserver() {
+vserver(){
     settitle "$1"
     command vserver "$@"
     settitle "host"
 }
-dotfileupdate() {
+4f_dotfileupdate(){
     cd ~/github/noxdotfiles
     if git pull | grep -q "Already up-to-date."; then
         echo -e "${GREEN}dotfiles are up-to-date${NC}"
@@ -30,6 +30,20 @@ dotfileupdate() {
     fi
     cd - > /dev/null
 }
-4upper() {
+4f_upper(){
     cd $(docker inspect --format '{{ .GraphDriver.Data.UpperDir }}' $1)
 }
+
+4f_ipv6_gw(){
+  if ! $(ping6 -W 1 -c 1 ipv6.google.com > /dev/null 2>&1); then  
+    ip -6 r d default 
+    ip -6 r a default via $(ip -6 r | grep "/64" | grep -v fe | head -1 | cut -d "/" -f1)1
+    #ip -6 r
+  fi
+  if $(ping6 -W 1 -c 1 ipv6.google.com > /dev/null 2>&1); then  
+    echo -e "${GREEN}IPv6 working"
+  else
+    echo -e "${RED}IPv6 still broken"
+  fi
+}
+
