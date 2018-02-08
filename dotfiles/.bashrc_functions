@@ -47,3 +47,16 @@ vserver(){
   fi
 }
 
+4f_autocommit(){
+    #TODO $@
+    #U="$@"
+    MSG="${@:-autocommit}"
+    git pull && git status
+    echo -n "Is this what you want? (Y/n) " ; read ANSWER
+    if [[ $ANSWER == "n" ]]; then
+    #if [[ $ANSWER == "n" -o $ANSWER == "N" ]]; then
+        echo "QUIT!!!"
+    else
+        git add -A && git commit -m "$MSG" && git push
+    fi
+}
