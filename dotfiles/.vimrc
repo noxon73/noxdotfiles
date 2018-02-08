@@ -128,8 +128,8 @@ cmap w!! w !sudo tee %
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 
-set foldmethod=indent
-set foldlevel=99
+"set foldmethod=indent
+"set foldlevel=99
 "set textwidth=79
 set tabstop=4
 set expandtab
@@ -178,8 +178,8 @@ set viminfo^=%
 
 "source ~/.vim/.vimrc_set
 
-set foldmethod=indent
-set foldlevel=99
+"set foldmethod=indent
+"set foldlevel=99
 "set textwidth=79
 set tabstop=4
 set expandtab
