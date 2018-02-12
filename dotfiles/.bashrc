@@ -2,24 +2,21 @@ export HISTSIZE=100000 # in memory
 unset HISTFILESIZE #undefinite lines to remeber
 export HISTCONTROL=ignoredups:erasedups  
 shopt -s histappend
-#always save history directly
-#export PROMPT_COMMAND='history -a;'
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 if [ -d ~/bin ]; then
     export PATH=~/bin:$PATH
 fi
 
-umask 022
+umask 077
 
-# files to be sourced
+f_source_old(){
+# files to be sourced 
 for SRCFILE in /etc/bash_completion ~/.bash_aliases ~/.bashrc_functions ~/.bash_alias; do
 	if [ -f $SRCFILE ]; then
 		. $SRCFILE
 	fi
 done
-
-
 
 ############ root  ############
 if [ x$USER = xroot ]; then 
@@ -38,17 +35,29 @@ else # should be linux
     export LS_OPTIONS='--color=auto'
     eval `dircolors`
 fi
-
+}
 ### TODO Handle linux distribution specific aliases (yum vs apt)
 ###      Handle work and privat aliases better
 
+f_source_new(){
+  # not ready needs case handling 
+  for SRCFILE in  $(find ~/.bash_source.d/ -type f); do 
+  	if [ -f $SRCFILE ]; then
+  		. $SRCFILE
+  	fi
+  done
+}
 
-###################################
-# your changes and overwrites here:
-if [ -f ~/.bashrc_local ]; then
-        . ~/.bashrc_local
-fi
-###################################
- 
+f_source_local(){
+  ###################################
+  # your changes and overwrites here:
+  if [ -f ~/.bashrc_local ]; then
+          . ~/.bashrc_local
+  fi
+  ###################################
+}
+f_source_old
+f_source_new
+f_source_local
 cd ~
 
